@@ -35,7 +35,7 @@ export const Navbar = styled.nav`
 `
 export const NavHeader = styled.nav`
   display: flex;
-  gap: 0.5rem;
+  gap: 2rem;
 
   a {
     color: ${(props) => props.theme['gray-100']};
@@ -43,9 +43,11 @@ export const NavHeader = styled.nav`
     border-top: 3px solid transparent;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
+    padding: 0.8rem;
 
     &:hover {
       border-bottom: 3px solid ${(props) => props.theme['blue-500']};
+      margin-top: 0.3rem;
     }
 
     &.active {

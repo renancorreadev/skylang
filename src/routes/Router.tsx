@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { Home, History } from '../pages'
+import { Home, Listen, Modules, About } from '../pages'
 import { DefaultLayout } from '@layouts'
 
 export function Router() {
@@ -7,7 +7,9 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/history" element={<History />} />
+        <Route path="/listen" element={<Listen />} />
+        <Route path="/modules" element={<Modules />} />
+        <Route path="/about" element={<About />} />
       </Route>
     </Routes>
   )

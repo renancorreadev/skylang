@@ -1,7 +1,7 @@
 export function Listen() {
   return (
     <div>
-      <h1>History</h1>
+      <h1>Listen</h1>
     </div>
   )
 }

@@ -7,14 +7,14 @@ export function Header() {
     <HeaderContainer>
       <Logo src="https://i.im.ge/2022/07/11/uvy6zM.png" />
       <NavHeader>
-        <NavLink to="/practic" title="Timer">
-          <span>Practic</span>
-        </NavLink>
-        <NavLink to="/englishmodular" title="Timer">
-          <span>Modules English</span>
-        </NavLink>
         <NavLink to="/listen" title="Timer">
           <span>Listen</span>
+        </NavLink>
+        <NavLink to="/modules" title="Timer">
+          <span>Modules English</span>
+        </NavLink>
+        <NavLink to="/about" title="Timer">
+          <span>About</span>
         </NavLink>
       </NavHeader>
 
