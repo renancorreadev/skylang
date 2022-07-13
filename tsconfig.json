@@ -26,6 +26,8 @@
       "@pages/*": ["./src/pages/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@types/*": ["./src/@types/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@graphql/*": ["./src/graphql/*"],
     }
   },
   "include": ["src"],

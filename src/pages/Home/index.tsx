@@ -1,7 +1,9 @@
+import { Container } from './styles'
+import { useGetAudioFiles } from '@hooks'
+
 export function Home() {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  )
+  const { listAudioFiles } = useGetAudioFiles()
+
+  console.log(listAudioFiles)
+  return <Container></Container>
 }
