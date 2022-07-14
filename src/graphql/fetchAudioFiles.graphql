@@ -1,6 +1,3 @@
-import { gql } from '@apollo/client'
-
-export const GET_AUDIO_FILES = gql`
   query Fetch {
     assets {
       id
@@ -10,4 +7,3 @@ export const GET_AUDIO_FILES = gql`
       phrase_en
     }
   }
-`

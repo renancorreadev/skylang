@@ -1,7 +1,9 @@
+import { ListenAudio } from '@components/ListenAudio'
+
 export function Listen() {
   return (
     <div>
-      <h1>Listen</h1>
+      <ListenAudio />
     </div>
   )
 }
