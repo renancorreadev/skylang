@@ -1,0 +1,11 @@
+query GET_MODULES_ENGLISH {
+  modules {
+    id
+    slug
+    title
+    description
+    exemplos
+    tipBr
+    tip_en
+  }
+}

@@ -1,0 +1,11 @@
+query GET_MODULES_BY_SLUG($slug: String) {
+ module(where: { slug: $slug }) {
+    description
+    exemplos
+    id
+    slug
+    tipBr
+    tip_en
+    title
+  }
+}

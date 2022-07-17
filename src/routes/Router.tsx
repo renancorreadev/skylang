@@ -8,7 +8,8 @@ export function Router() {
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/listen" element={<Listen />} />
-        <Route path="/modules" element={<Modules />} />
+        <Route path="/modules/" element={<Modules />} />
+        <Route path="/modules/:slug" element={<Modules />} />
         <Route path="/about" element={<About />} />
       </Route>
     </Routes>

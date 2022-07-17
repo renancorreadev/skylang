@@ -1,9 +1,10 @@
-  query Fetch {
+  query GET_AUDIO_FILES {
     assets {
       id
       fileName
       url
       audiocontent
       phrase_en
+      language
     }
   }

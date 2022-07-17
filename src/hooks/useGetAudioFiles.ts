@@ -1,17 +1,26 @@
 import { useState, useEffect } from 'react'
-import { FetchQuery, useFetchQuery } from '@graphql/generated'
+import {
+  useGet_Audio_FilesQuery,
+  Get_Audio_FilesQuery
+} from '@graphql/generated'
 
-type Fetch = FetchQuery['assets']
+type Fetch = Get_Audio_FilesQuery['assets']
 
 export const useFetchAudio = () => {
-  const { data: assets, loading } = useFetchQuery({ fetchPolicy: 'no-cache' })
+  const { data: assets, loading } = useGet_Audio_FilesQuery({
+    fetchPolicy: 'no-cache'
+  })
   const [listAudioFiles, setListAudioFiles] = useState<Fetch>([])
+  const [url, setUrl] = useState<string[]>([])
 
   useEffect(() => {
     if (assets && !loading) {
+      assets.assets.map((asset) => {
+        setUrl((prev) => [...prev, asset.url])
+      })
       setListAudioFiles(assets?.assets)
     }
   }, [assets, loading])
 
-  return { listAudioFiles }
+  return { listAudioFiles, url }
 }
