@@ -25,16 +25,12 @@ export const Container = styled.div<ContainerType>`
     return 'all'
   }};
 
-  color: ${({ isShowingFrontFace, theme }): string =>
-    isShowingFrontFace ? theme.cardBackFace : theme.cardFrontFace};
+  color: pink;
 
-  background: ${({ isShowingFrontFace, theme }): string =>
-    isShowingFrontFace
-      ? theme.cardFrontFace + ' !important'
-      : theme.cardBackFace};
+  background: ${(props) => props.theme['blue-600']};
 
   &:hover {
-    background: ${({ theme }): string => theme.accent};
+    background: ${(props) => props.theme['blue-300']};
   }
 
   /* transform-style: preserve-3d;

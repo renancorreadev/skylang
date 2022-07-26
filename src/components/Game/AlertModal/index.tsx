@@ -7,7 +7,7 @@ import {
   TitleContainer,
   CloseButton,
   Message,
-  Footer,
+  Footer
 } from './styles'
 
 type AlertModalProps = {
@@ -24,7 +24,7 @@ const AlertModal: React.FC<AlertModalProps> = (props) => {
     onCloseModal,
     title = '',
     message = '',
-    children,
+    children
   } = props
 
   return (

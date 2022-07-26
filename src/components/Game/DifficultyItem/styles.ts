@@ -2,14 +2,14 @@ import styled, {
   css,
   FlattenInterpolation,
   DefaultTheme,
-  ThemeProps,
+  ThemeProps
 } from 'styled-components'
 
 type CssType = FlattenInterpolation<ThemeProps<DefaultTheme>> | null
 
 const ItemSelected = css`
-  background: ${({ theme }): string => theme.primaryText} !important;
-  color: ${({ theme }): string => theme.background} !important;
+  background: ${(props) => props.theme['blue-300']}!important;
+  color: ${(props) => props.theme['gray-300']}!important;
 `
 
 export const Container = styled.div<{ isSelected: boolean }>`
@@ -21,7 +21,7 @@ export const Container = styled.div<{ isSelected: boolean }>`
   cursor: pointer;
   user-select: none;
   transition: transform 0.1s ease-in-out;
-  border: 2px solid ${({ theme }): string => theme.primaryText};
+  border: 2px solid ${(props) => props.theme['blue-700']};
   ${({ isSelected }): CssType => (isSelected ? ItemSelected : null)}
   &:hover {
     transform: translateY(-8px);

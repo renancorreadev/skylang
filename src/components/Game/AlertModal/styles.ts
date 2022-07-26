@@ -16,7 +16,7 @@ export const Container = styled.div<{ isShowing?: boolean }>`
 `
 
 export const Dialog = styled.div`
-  background: ${({ theme }): string => theme.background};
+  background: ${(props) => props.theme['gray-100']};
   border-radius: 5px;
   width: 33%;
   min-width: 300px;
@@ -46,7 +46,7 @@ export const CloseButton = styled.div`
   cursor: pointer;
   transition: background 0.2s ease-in-out;
   &:hover {
-    background: ${({ theme }): string => theme.accent};
+    background: ${(props) => props.theme['green-300']};
   }
 `
 

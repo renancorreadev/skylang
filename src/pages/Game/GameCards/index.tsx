@@ -2,8 +2,6 @@
 import React, { useContext, useEffect } from 'react'
 import GameContext from '../GameContext'
 import { Container, CardItem } from './styles'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 const GameCards: React.FC = () => {
   const {
@@ -75,7 +73,7 @@ const GameCards: React.FC = () => {
             disabled={isPaused || isShowingFrontFace}
             numOfCardsInEachLine={difficulty / 4}
           >
-            <h2 style={{ fontSize: '4rem', textTransform: 'uppercase' }}>
+            <h2 style={{ fontSize: '3rem', textTransform: 'uppercase' }}>
               {' '}
               {icon}{' '}
             </h2>

@@ -10,7 +10,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   height: 64px;
-  background: ${({ theme }): string => theme.controlBar};
+  background: ${(props): string => props.theme['gray-600']};
   user-select: none;
   padding: 0 24px;
 
@@ -31,7 +31,7 @@ export const BackButton = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  border: 1px solid ${({ theme }): string => theme.secondaryText};
+  border: 1px solid green;
   min-height: ${ButtonHeight}px;
   min-width: ${ButtonHeight}px;
   font-size: 2rem;
@@ -39,11 +39,10 @@ export const BackButton = styled.div`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: ${({ theme }): string => theme.accent};
+    background: ${(props) => props.theme['blue-500']};
     color: white;
   }
 `
-
 export const DifficultyIndicator = styled.div`
   @media only screen and (max-width: 700px) {
     display: none;
@@ -79,13 +78,12 @@ export const Button = styled.div`
   height: ${ButtonHeight}px;
   padding: 0 24px;
   border-radius: 5px;
-  border: 1px solid ${({ theme }): string => theme.secondaryText};
+  border: 1px solid ${(props) => props.theme['blue-300']};
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: ${({ theme }): string => theme.accent};
-    color: white;
+    background: ${(props) => props.theme['blue-700']};
   }
 
   ${ButtonText} {
