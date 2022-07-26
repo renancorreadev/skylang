@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const ListenContainer = styled.div`
   max-width: 1000px;
   margin: 0 auto;
+  padding-bottom: 8rem;
 `
 
 export const LogosWrapper = styled.div`

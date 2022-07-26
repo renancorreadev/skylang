@@ -3,9 +3,14 @@ import {
   Title,
   ModuleDescription,
   ExamplesContainer,
+  Example,
   ExplanationContainer,
   ContainerLogo,
-  Logo
+  Logo,
+  ExplanationWrapper,
+  Explanation,
+  ExamplesWrapper,
+  BonusContent
 } from './styles'
 import { useGet_Modules_By_SlugQuery } from '@graphql/generated'
 
@@ -29,10 +34,6 @@ export function Module({ slug }: ModuleProps) {
     )
   }
 
-  if (data && data.module != undefined) {
-    console.log(data.module)
-  }
-
   return (
     <WrapperContainer>
       <Title>{data.module.title} </Title>
@@ -41,22 +42,36 @@ export function Module({ slug }: ModuleProps) {
 
       <h2>Examples</h2>
       <ExamplesContainer>
-        {data.module.exemplos.map((example) => {
-          return <p key={example}>{example}</p>
+        {data.module.exemplos.map((example, index) => {
+          return (
+            <ExamplesWrapper key={index}>
+              <Example key={example}>{example}</Example>
+            </ExamplesWrapper>
+          )
         })}
       </ExamplesContainer>
 
-      <ExplanationContainer>
-        {data.module.tip_en.map((tip) => {
-          return <p key={tip}>{tip}</p>
-        })}
-      </ExplanationContainer>
+      <BonusContent>
+        <ExplanationContainer>
+          {data.module.tip_en.map((tip) => {
+            return (
+              <ExplanationWrapper key={tip}>
+                <Explanation key={tip}>{tip}</Explanation>
+              </ExplanationWrapper>
+            )
+          })}
+        </ExplanationContainer>
 
-      <ExplanationContainer>
-        {data.module.tipBr.map((tip) => {
-          return <p key={tip}>{tip}</p>
-        })}
-      </ExplanationContainer>
+        <ExplanationContainer>
+          {data.module.tipBr.map((tip) => {
+            return (
+              <ExplanationWrapper key={tip}>
+                <Explanation key={tip}>{tip}</Explanation>
+              </ExplanationWrapper>
+            )
+          })}
+        </ExplanationContainer>
+      </BonusContent>
     </WrapperContainer>
   )
 }

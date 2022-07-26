@@ -16,6 +16,9 @@ export function Header() {
         <NavLink to="/about" title="Timer">
           <span>About</span>
         </NavLink>
+        <NavLink to="/game" title="Timer">
+          <span>Game Memorization</span>
+        </NavLink>
       </NavHeader>
 
       <Navbar>

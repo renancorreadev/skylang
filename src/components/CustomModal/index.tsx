@@ -5,48 +5,53 @@ import {
   useImperativeHandle,
   forwardRef
 } from 'react'
-
+import {
+  ModalContainer,
+  ModalContentWrapper,
+  ModalContent,
+  ModalTitle
+} from './styles'
 interface ModalProps {
   title: string
   content: string
 }
 export interface ModalHandles {
   openModal: () => void
+  closeModal: () => void
 }
 
 const CustomModal: ForwardRefRenderFunction<ModalHandles, ModalProps> = (
   { title, content }: ModalProps,
   ref
 ) => {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
   const openModal = useCallback(() => {
     setVisible(true)
   }, [])
 
-  useImperativeHandle(ref, () => {
-    return {
-      openModal
-    }
-  })
-
-  const handleCloseModal = useCallback(() => {
+  const closeModal = useCallback(() => {
     setVisible(false)
   }, [])
+
+  useImperativeHandle(ref, () => {
+    return {
+      openModal,
+      closeModal
+    }
+  })
 
   if (!visible) {
     return null
   }
 
   return (
-    <div>
-      <h1>{title}</h1>
+    <ModalContainer>
+      <ModalTitle>{title}</ModalTitle>
 
-      <div>
-        <p>{content}</p>
-      </div>
-
-      <button onClick={handleCloseModal}>Fechar Modal</button>
-    </div>
+      <ModalContentWrapper>
+        <ModalContent>{content}</ModalContent>
+      </ModalContentWrapper>
+    </ModalContainer>
   )
 }
 

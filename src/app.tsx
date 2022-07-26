@@ -6,16 +6,21 @@ import { BrowserRouter } from 'react-router-dom'
 import { Router } from '@routes/Router'
 import { ApolloProvider } from '@apollo/client'
 import { client } from '@lib/apollo'
+import { Provider } from 'react-redux'
+import store from './store'
+import './game/config/IconLibrary'
 
 export function App() {
   return (
-    <ApolloProvider client={client}>
-      <ThemeProvider theme={defaultTheme}>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
-        <GlobalStyle />
-      </ThemeProvider>
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={defaultTheme}>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+          <GlobalStyle />
+        </ThemeProvider>
+      </ApolloProvider>
+    </Provider>
   )
 }

@@ -26,9 +26,10 @@ export const ModuleDescription = styled.p`
 `
 
 export const ExamplesContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  justify-content: center;
+  text-align: center;
 `
 
 export const ExamplesWrapper = styled.div`
@@ -75,4 +76,9 @@ export const Logo = styled.img`
   width: 100px;
   height: 100px;
   margin: 0.5rem;
+`
+
+export const BonusContent = styled.div`
+  display: flex;
+  justify-content: space-around;
 `

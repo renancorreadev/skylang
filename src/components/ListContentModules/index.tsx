@@ -2,7 +2,7 @@ import {
   useGet_Modules_EnglishQuery,
   Get_Modules_EnglishQuery
 } from '@graphql/generated'
-import { ModuleUrl } from '@components/ModuleUrl'
+import { ModuleUrl } from '@components/Module/ModuleUrl'
 import { useEffect, useState } from 'react'
 import { ListContentWrapper } from './styles'
 
